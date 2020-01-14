@@ -7,10 +7,15 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import bg from '../bg.png'
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    height: '100%',
+    backgroundImage: `url(${bg})`,
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -20,13 +25,20 @@ const useStyles = makeStyles(theme => ({
   },
   listContainer: {
     marginTop: theme.spacing(10),
-  }
+  },
+  fab: {
+    margin: 0,
+    top: 'auto',
+    right: 20,
+    bottom: 20,
+    left: 'auto',
+    position: 'fixed',
+  },
 }));
 
 export default function App() {
   const classes = useStyles();
-  const [questions, setQuestions] = useState([
-    {
+  const [questions, setQuestions] = useState([{
       _id: 1,
       title: 'Qual a raíz quadrada de 4?',
       option_a: '2',
@@ -64,6 +76,9 @@ export default function App() {
 
   return (
     <div className={classes.root}>
+      <Fab color="primary" aria-label="add" className={classes.fab}>
+        <AddIcon />
+      </Fab>
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">

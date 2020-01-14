@@ -1,0 +1,8 @@
+body {
+  background-image: url(../../src/bg.png);
+  font-size: 50px !important;
+}
+#root {
+  height: 100vh;
+  margin: 0;
+}
