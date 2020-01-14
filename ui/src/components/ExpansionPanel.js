@@ -15,9 +15,13 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
   },
   heading: {
-    fontSize: theme.typography.pxToRem(15),
+    fontSize: theme.typography.pxToRem(20),
     fontWeight: theme.typography.fontWeightRegular,
   },
+	details: {
+		flexDirection: 'column',
+		marginLeft: 120
+	},
 }));
 
 export default function SimpleExpansionPanel(props) {
@@ -44,14 +48,12 @@ export default function SimpleExpansionPanel(props) {
             </Typography>
           </Container>
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>
-            <p><b>a)</b> {props.question.option_a}</p>
-            <p><b>b)</b> {props.question.option_b}</p>
-            <p><b>c)</b> {props.question.option_c}</p>
-            <p><b>d)</b> {props.question.option_d}</p>
-            <p>Resposta: {props.question.answer}</p>
-          </Typography>
+        <ExpansionPanelDetails className={classes.details}>
+          <Typography> <b>a)</b> {props.question.option_a} </Typography>
+          <Typography> <b>b)</b> {props.question.option_b} </Typography>
+          <Typography> <b>c)</b> {props.question.option_c} </Typography>
+          <Typography> <b>d)</b> {props.question.option_d} </Typography>
+          <Typography> <b>Resposta:</b> {props.question.answer} </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
     </div>

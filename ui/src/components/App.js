@@ -52,10 +52,15 @@ export default function App() {
       answer: 'd'
     }
   ]);
-  const ExpansionPanelList = questions.map((question) => {
-    return <ExpansionPanel key={question._id} question={question} />
-  });
 
+  const ExpansionPanelList = questions.map((question) => {
+    return (
+      <ExpansionPanel
+        key={question._id}
+        question={question}
+      /> 
+    );
+  });
 
   return (
     <div className={classes.root}>
